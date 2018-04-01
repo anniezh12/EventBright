@@ -1,6 +1,17 @@
 import React,{Component} from 'react';
 import EventForm from './eventform.js'
 
+const EventsLists = ({events}) =>(
+
+    <div>
+    {events.map((event,index)=>{
+      return (<li key={index}> {event.name}</li>)
+      }
+ )}
+    </div>
+
+);
+
 export default class Event extends Component{
   constructor(props){
     super(props);
@@ -10,29 +21,23 @@ export default class Event extends Component{
   }
 
   addEvents = (event) =>{
-  this.setState({events:[...this.state.events,event], })
-    console.log(this.state.events)
-
-   //this.setState({events:[...this.state.events,event], })
+  //  console.log("A",event)
+  this.setState({
+    events:[...this.state.events,event,]
+   })
   }
 
 
   render()  {
-    debugger;
-    const  {events} = this.state;
-    let eventsList = events.map((event,index)=>{
-      return <li key={index}>
-               {event.name} - {event.city} - {event.date}
-               </li>
 
-    })
     return( <div>
       <h4>You can add events here</h4>
-        <EventForm hello={this.addEvents}/>
-        <ul>
-        {eventsList}
-        </ul>
+      Number of Events Added :{this.state.events.length}
+      <br/>
+        <EventForm onSubmit={this.addEvents}/>
+        <EventsLists events={this.state.events}/>
       </div>
     )
+
   }
 }

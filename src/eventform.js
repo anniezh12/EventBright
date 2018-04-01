@@ -18,13 +18,12 @@ export default class EventForm extends Component{
   }
 
    handleSubmit = (event) =>{
+     console.log(this.state)
      event.preventDefault();
-    this.props.hello(event)
+    this.props.onSubmit(this.state);
+console.log(this.state)
 
-     
-     console.log("you are in Submit no 2",this.state)
-
-   }
+     }
   render()
   {
     return(
@@ -35,7 +34,7 @@ export default class EventForm extends Component{
          Date :<input type="text" name="date" value={this.state.date} onChange={this.handleChange}/><p/>
          <input type="submit" name="Add"/>
          </form>
-         <h4>{this.state.name},{this.state.city},{this.state.date}</h4>
+
       </div>
     )
   }

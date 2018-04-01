@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 import Event from './event.js'
+import EventsFromApi  from './eventsfromapi.js';
 class App extends Component {
   render() {
     return (
@@ -10,9 +11,8 @@ class App extends Component {
           <h1 className="App-title">Welcome to EventBright</h1>
 
         </header>
-
+        <EventsFromApi />
         <Event  />
-
       </div>
     );
   }
