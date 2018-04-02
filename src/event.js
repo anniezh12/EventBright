@@ -1,11 +1,10 @@
 import React,{Component} from 'react';
 import EventForm from './eventform.js'
-
 const EventsLists = ({events}) =>(
 
     <div>
     {events.map((event,index)=>{
-      return (<li key={index}> {event.name}</li>)
+      return (<li key={index}> {event.name} - {event.city} - {event.date}</li>)
       }
  )}
     </div>
@@ -30,10 +29,11 @@ export default class Event extends Component{
 
   render()  {
 
-    return( <div>
-      <h4>You can add events here</h4>
-      Number of Events Added :{this.state.events.length}
-      <br/>
+    return(
+     <div>
+        <h4>You can add events here</h4>
+        Number of Events Added :{this.state.events.length}
+        <br/>
         <EventForm onSubmit={this.addEvents}/>
         <EventsLists events={this.state.events}/>
       </div>

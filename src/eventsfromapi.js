@@ -1,9 +1,26 @@
 import React,{Component} from 'react';
 import 'isomorphic-fetch';
 
-const MY_TOKEN = "X6NO2JJY4ZSUVEJC3OIN";
+
+const MY_TOKEN = "D7LP3OXBFAIVNHU5XEZE";
 const URL=`https://www.eventbriteapi.com/v3/users/me/?token=${MY_TOKEN}`;
 
+const CurrentUserEventsLists = ({events}) => (
+  <div>
+  {
+    events.map((event,key) => {return (
+                        <li key={key}><b> {event.name.text}</b>
+                              <br/>{event.description.text}
+                              <br/>Time: {event.start.local}
+                              <br/> Time Zone :{event.start.timezone}
+                              <br/> Price :{}
+                              <br/>Tickets Left: {event.capacity}
+                          </li>)
+                        })
+
+   }
+  </div>
+)
 
 export default class EventsFromApi extends Component{
 
@@ -21,9 +38,7 @@ componentWillMount(){
     fetch(URL)
     .then(response => response.json())
     .then(res => this.setState({user: res.name}))
-    // .then(user => this.setState({user: user.name}));
-
-  }
+    }
 
   componentDidMount(){
 
@@ -36,29 +51,14 @@ componentWillMount(){
 
   render()
   {
-
-    let currentUserEventsLists =this.state.eventsByCurrentuser.map((event,key) => {return (
-                        <li key={key}><b> {event.name.text}</b>
-                              <br/>{event.description.text}
-                              <br/>Time: {event.start.local}
-                              <br/> Time Zone :{event.start.timezone}
-                              <br/> Price :{}
-                              <br/>Tickets Left: {event.capacity}
-                          </li>)
-                        })
-
     return(
       <div className="bg-warning text-white" >
         <h4>All Events by {this.state.user}!</h4>
 
           <ol>
-           {currentUserEventsLists}
+           <CurrentUserEventsLists events={this.state.eventsByCurrentuser}/>
            </ol>
       </div>
     )
   }
 }
-//
-// <a  className= "btn-primary" href=url>My Site</a>&nbsp;
-// <a  className= "btn-primary" href="https://www.eventbrite.com/">By Location</a>&nbsp;
-// // <a  className= "btn-primary" href="https://www.eventbrite.com/">By Event</a>

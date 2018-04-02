@@ -13,17 +13,15 @@ export default class EventForm extends Component{
   handleChange=(event)=>{
 
     this.setState({
-[event.target.name]: event.target.value //will assign all the input to its related state
+[event.target.name]: event.target.value    //will assign all the input to its related state
     })
   }
 
    handleSubmit = (event) =>{
-     console.log(this.state)
-     event.preventDefault();
-    this.props.onSubmit(this.state);
-console.log(this.state)
-
+          event.preventDefault();
+         this.props.onSubmit(this.state);
      }
+
   render()
   {
     return(
