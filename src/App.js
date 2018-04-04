@@ -4,6 +4,11 @@ import './App.css';
 import Event from './event.js'
 import EventsFromApi  from './eventsfromapi.js';
 import { connect } from 'react-redux';
+import { BrowserRouter as Router, Route , NavLink} from 'react-router-dom'; //to user react routes
+import NavBar from './NavBar';
+import Home from './Home';
+import About from './About';
+import ContactUs from './ContactUs'
 
 class App extends Component {
 
@@ -17,15 +22,22 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to EventBright</h1>
+          <h1 className="App-title">Welcome to Event Be Right</h1>
         </header>
 
-        <button onClick={(e)=>this.handleOnClick(e)}>
-            Click
-        </button>
-        <p>{this.props.store.getState().items.length}</p>
+                  <Router>
+                   <div>
+                   <NavBar/>
+                      <Route exact path="/home" component={Home}/>
+                      <Route  path="/about" component={About}/>
+                      <Route  path="/contactus" component={ContactUs}/>
+                   </div>
+                 </Router>
            <Event  />
            <EventsFromApi />
+           <button onClick={(e)=>this.handleOnClick(e)}>
+               Click
+           </button>[{this.props.store.getState().items.length}]
       </div>
     );
   }
