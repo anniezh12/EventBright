@@ -3,21 +3,15 @@ import React, { Component } from 'react';
 import './App.css';
 import Event from './event.js'
 import EventsFromApi  from './eventsfromapi.js';
-import { connect } from 'react-redux';
+
 import { BrowserRouter as Router, Route , NavLink} from 'react-router-dom'; //to user react routes
 import NavBar from './NavBar';
 import Home from './Home';
 import About from './About';
 import ContactUs from './ContactUs'
+import EventDisplayedUsingRedux from './EventDisplayedRedux'
 
 class App extends Component {
-
-   handleOnClick(){
-     this.props.store.dispatch({
-       type:'INCREASE_COUNT',
-     })
-   }
-
   render() {
     return (
       <div className="App">
@@ -35,15 +29,11 @@ class App extends Component {
                  </Router>
            <Event  />
            <EventsFromApi />
-           <button onClick={(e)=>this.handleOnClick(e)}>
-               Click
-           </button>[{this.props.store.getState().items.length}]
+           <EventDisplayedUsingRedux store={this.props.store}/>
       </div>
     );
   }
 }
 
-const mapStateToProps = (state) =>{
-  return {items: state.items}
-}
-export default connect(mapStateToProps)(App);
+
+export default App;
