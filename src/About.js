@@ -1,10 +1,13 @@
 import React from 'react';
-
+import {allEvents} from './data.js';
 const About = () => {
 
   return (
     <div>
-       Hi, you are in the About Page
+
+          {allEvents.map((event)=>(
+          <div>{event.name}-{event.date}</div>
+        ))}
     </div>
   );
 }

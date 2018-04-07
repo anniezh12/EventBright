@@ -11,6 +11,7 @@ import About from './About';
 import ContactUs from './ContactUs'
 import EventDisplayedUsingRedux from './EventDisplayedRedux'
 
+
 class App extends Component {
   render() {
     return (
@@ -23,12 +24,14 @@ class App extends Component {
                    <div>
                    <NavBar/>
                       <Route exact path="/home" component={Home}/>
-                      <Route  path="/about" component={About}/>
-                      <Route  path="/contactus" component={ContactUs}/>
+                      <Route exact path="/about" component={About}/>
+                      <Route  exact path="/contactus" component={ContactUs}/>
+                      <Route exact path="/event" component={Event}/>
+                      <Route exact path="/eventfromapi" component={EventsFromApi}/>
+                      <Route exact path="/about" component={About}/>
                    </div>
                  </Router>
-           <Event  />
-           <EventsFromApi />
+                
            <EventDisplayedUsingRedux store={this.props.store}/>
       </div>
     );
