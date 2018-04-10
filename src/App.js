@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 
 import './App.css';
-import Event from './event.js'
-import EventsFromApi  from './eventsfromapi.js';
-
-import { BrowserRouter as Router, Route , NavLink} from 'react-router-dom'; //to user react routes
-import NavBar from './NavBar';
-import Home from './Home';
-import About from './About';
-import ContactUs from './ContactUs'
-import EventDisplayedUsingRedux from './EventDisplayedRedux'
+import Event from './components/event.js'
+import EventsFromApi  from './components/eventsfromapi.js';
+import { BrowserRouter as Router, Route } from 'react-router-dom'; //to user react routes
+import NavBar from './statelessComponents/NavBar';
+import Home from './statelessComponents/Home';
+import About from './statelessComponents/About';
+import ContactUs from './statelessComponents/ContactUs'
+import EventDisplayedUsingRedux from './components/EventDisplayedRedux'
 
 
 class App extends Component {
@@ -17,7 +16,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Welcome to Event Be Right</h1>
+          <h1 className="App-title"><img src="pengu.gif" width='50px' height='50px'/>&nbsp;&nbsp;Event Be Right! </h1>
+
         </header>
 
                   <Router>
@@ -25,14 +25,16 @@ class App extends Component {
                    <NavBar/>
                       <Route exact path="/home" component={Home}/>
                       <Route exact path="/about" component={About}/>
-                      <Route  exact path="/contactus" component={ContactUs}/>
                       <Route exact path="/event" component={Event}/>
                       <Route exact path="/eventfromapi" component={EventsFromApi}/>
-                      <Route exact path="/about" component={About}/>
+                      <Route  exact path="/contactus" component={ContactUs}/>
+                      <Route  exact path="/redux" render={()=><EventDisplayedUsingRedux store={this.props.store}/>}/>
                    </div>
                  </Router>
-                
-           <EventDisplayedUsingRedux store={this.props.store}/>
+
+
+
+
       </div>
     );
   }
