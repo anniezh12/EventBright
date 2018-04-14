@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import 'isomorphic-fetch';
 
 
-const MY_TOKEN = "your Token";
+const MY_TOKEN = "D7LP3OXBFAIVNHU5XEZE";
 const URL=`https://www.eventbriteapi.com/v3/users/me/?token=${MY_TOKEN}`;
 
 const CurrentUserEventsLists = ({events}) => (

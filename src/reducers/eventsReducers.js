@@ -1,7 +1,4 @@
-const initialState = {
-    events:[],
-    count:0
-}
+
 export default function eventsReducers(state= {events:[]},action){
 
   switch(action.type)
@@ -10,6 +7,8 @@ export default function eventsReducers(state= {events:[]},action){
     return {...state,events:[...state.events,action.events]}
       //return ...state, events:state.events.concat(action.events)
       //return Object.assign({},state,{events:state.events.concat(action.events)})
+     case 'DISPLAY_EVENTS':
+     return state;
     default:
       return state;
 

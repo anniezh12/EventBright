@@ -3,7 +3,7 @@ import {allEvents} from '../data.js';
 const About = () => {
 
   return (
-    <div class="jumbotron">
+    <div className="jumbotron">
 
           {allEvents.map((event)=>(
           <div>{event.name}-{event.date}</div>

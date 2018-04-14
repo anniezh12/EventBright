@@ -23,9 +23,8 @@ import {addEvent} from '../actions/addevent.js'
 
  handleOnSubmit = (event) => {
    event.preventDefault();
-   console.log("inside handle onsubmi",this.state)
    this.props.addEvent(this.state);
-   }
+     }
 
 
 
@@ -38,9 +37,9 @@ import {addEvent} from '../actions/addevent.js'
       <div>
       {eventLists}
       <h3>Using Redux</h3>
-      <div class="jumbotron">
+      <div className="jumbotron">
             <form onSubmit={this.handleOnSubmit}>
-            <div class="form-inline">
+            <div className="form-inline">
 
                   Name:<input type="text" className="form-control" name="name" value={this.state.name} onChange={(event)=>{this.handleOnChange(event)}}/>
                   <br/>
@@ -59,14 +58,8 @@ import {addEvent} from '../actions/addevent.js'
 }
 
 const mapStateToProps = (state) => {
-  return {
-    events: state.events
+  return { events: state.events };
+   }
 
-  };
-}
-
-// const mapDispatchToProps = (dispatch) =>{
-//   return bindActionCreators({addEvent: addEvent},dispatch)
-// }
 
 export default connect(mapStateToProps,{addEvent})(EventDisplayedUsingRedux);

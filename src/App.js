@@ -8,6 +8,7 @@ import NavBar from './statelessComponents/NavBar';
 import Home from './statelessComponents/Home';
 import About from './statelessComponents/About';
 import ContactUs from './statelessComponents/ContactUs'
+// import AllEvents from './components/allEvents'
 import EventDisplayedUsingRedux from './components/EventDisplayedRedux'
 
 
@@ -16,20 +17,21 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title"><img src="pengu.gif" width='50px' height='50px'/>&nbsp;&nbsp;Event Be Right! </h1>
+          <h1 className="App-title"><img src="pengu.gif" alt="Penguin Image" width='50px' height='50px'/>&nbsp;&nbsp;Event Be Right! </h1>
 
         </header>
 
                   <Router>
-                   <div>
+                   <React.Fragment>
                    <NavBar/>
                       <Route exact path="/home" component={Home}/>
                       <Route exact path="/about" component={About}/>
                       <Route exact path="/event" component={Event}/>
                       <Route exact path="/eventfromapi" component={EventsFromApi}/>
-                      <Route  exact path="/contactus" component={ContactUs}/>
-                      <Route  exact path="/redux" render={()=><EventDisplayedUsingRedux store={this.props.store}/>}/>
-                   </div>
+                      <Route exact path="/contactus" component={ContactUs}/>
+                      <Route exact path="/redux" render={()=><EventDisplayedUsingRedux store={this.props.store}/>}/>
+                    
+                   </React.Fragment>
                  </Router>
 
 
