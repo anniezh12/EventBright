@@ -9,7 +9,6 @@ const About = () => {
           <div>{event.name}-{event.date}</div>
         ))}
     </div>
-  );
-}
+  )}
 
 export default About;

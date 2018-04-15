@@ -8,6 +8,7 @@ import NavBar from './statelessComponents/NavBar';
 import Home from './statelessComponents/Home';
 import About from './statelessComponents/About';
 import ContactUs from './statelessComponents/ContactUs'
+
 // import AllEvents from './components/allEvents'
 import EventDisplayedUsingRedux from './components/EventDisplayedRedux'
 
@@ -30,7 +31,7 @@ class App extends Component {
                       <Route exact path="/eventfromapi" component={EventsFromApi}/>
                       <Route exact path="/contactus" component={ContactUs}/>
                       <Route exact path="/redux" render={()=><EventDisplayedUsingRedux store={this.props.store}/>}/>
-                    
+
                    </React.Fragment>
                  </Router>
 

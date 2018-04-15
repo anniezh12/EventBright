@@ -26,10 +26,10 @@ export function addEvent(currentEvent) {
 }}
 
 // display function
-// export function displayEvents(){
-//   return (dispatch) =>{
-//     return fetch('${URL}/events')
-//     .then(resp => resp.json())
-//     .then(events => dispatch({type: 'DISPLAY_EVENTS',events: events}))
-//     }
-//   }
+export function displayEvents(){
+  return (dispatch) =>{
+    return fetch('${URL}/events')
+    .then(resp => resp.json())
+    .then(events => dispatch({type: 'DISPLAY_EVENTS',events: events}))
+    }
+  }
