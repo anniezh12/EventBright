@@ -30,8 +30,8 @@ export default class Event extends Component{
   render()  {
 
     return(
-     <div class="jumbotron">
-        
+     <div className="jumbotron">
+
         Number of Events Added :{this.state.events.length}
         <br/>
         <EventForm onSubmit={this.addEvents}/>

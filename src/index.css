@@ -1,6 +1,8 @@
 body {
-  background:#ECF0F1  ;
-  /*background-image: url("/public/backgroundpic.png");*/
+  background-image: url('background.jpeg') ;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: right 120px;
   margin: 0;
   padding: 0;
   font-family: sans-serif;

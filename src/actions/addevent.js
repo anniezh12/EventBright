@@ -1,6 +1,6 @@
 import 'isomorphic-fetch';
   let URL = 'http://localhost:3000';
-
+// Adding Event
 export function addEvent(currentEvent) {
 
       return (dispatch) => {
@@ -20,9 +20,7 @@ export function addEvent(currentEvent) {
            type: 'ADD_EVENT',
            events: events})
          )
-       .catch(errors => {
-         console.log(errors)
-       })
+
 }}
 
 // display function

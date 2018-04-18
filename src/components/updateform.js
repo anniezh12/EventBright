@@ -4,9 +4,10 @@ import { connect } from 'react-redux';
 import {addEvent} from '../actions/addevent.js'
 
 
- class EventDisplayedUsingRedux extends React.Component{
+ class UpdateForm extends React.Component{
  constructor(props){
    super(props);
+   console.log("props",props)
    this.state={
      name:'',
      city:'',
@@ -23,7 +24,8 @@ import {addEvent} from '../actions/addevent.js'
 
  handleOnSubmit = (event) => {
    event.preventDefault();
-   this.props.addEvent(this.state);
+   alert(event);
+  // this.props.updateEvent(this.state);
      }
 
 
@@ -62,4 +64,4 @@ const mapStateToProps = (state) => {
    }
 
 
-export default connect(mapStateToProps,{addEvent})(EventDisplayedUsingRedux);
+export default connect(mapStateToProps)(UpdateForm);

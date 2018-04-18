@@ -13,6 +13,19 @@ class EventsController < ApplicationController
           end
          end
 
+         def update
+           @event = Event.find(params[:id])
+           @event.update(event_params)
+             render json:@event
+         end
+
+         def destroy
+           @event = Event.find(params[:id])
+           if @event.destroy
+            render json: Event.all
+           end
+         end
+
          private
           def event_params
             params.require(:event).permit(:name,:city,:date)

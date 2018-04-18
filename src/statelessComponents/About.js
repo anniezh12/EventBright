@@ -5,8 +5,8 @@ const About = () => {
   return (
     <div className="jumbotron">
 
-          {allEvents.map((event)=>(
-          <div>{event.name}-{event.date}</div>
+          {allEvents.map((event,index)=>(
+          <div key={index}>{event.name}-{event.date}</div>
         ))}
     </div>
   )}

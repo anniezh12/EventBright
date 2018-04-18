@@ -17,10 +17,10 @@ width:'100%',
            <div className="link">
               <NavLink to="/home"  style={link}>Home  </NavLink>
               <NavLink to="/about"  style={link}>Events  </NavLink>
-              <NavLink to="/event"  style={link} >Add Event  </NavLink>
-              <NavLink to="/eventfromapi"  style={link}>Events From API </NavLink>
-                <NavLink to="/redux"  style={link}>Redux </NavLink>
-                
+              <NavLink to="/event"  style={link} >React </NavLink>
+              <NavLink to="/eventfromapi"  style={link}>Eventbrite </NavLink>
+              <NavLink to="/redux"  style={link}>Redux </NavLink>
+
               <NavLink to="/contactus"  style={link}>Contact Us  </NavLink>
            </div>
          )
