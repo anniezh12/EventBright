@@ -10,8 +10,7 @@ export default function eventsReducers(state= {events:[]},action){
     case 'UPDATE_EVENT':
 
     case 'DELETE_EVENT':
-       //state.events = state.events.filter(event => event.id !== action.id)
-        return {...state,events: action.events }
+         return {...state,events: action.events }
     default:
       return state;
 

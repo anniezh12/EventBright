@@ -1,13 +1,10 @@
 let URL = 'http://localhost:3000/events'
-export default function updateEvent(event,eventId){
-console.log("resp", eventId);
+export default function updateEvent(event){
+console.log("resp",event);
   return dispatch => {
 
     return fetch(`${URL}/${eventId}`,{
      method: 'patch',
-
-
-
      headers:{
        'Accept': 'application/json',
        'Content-Type':"application/json"

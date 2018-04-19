@@ -13,7 +13,11 @@ class AllEvents extends Component{
     super(props);
     this.state={
       events:[],
-      showForm: false
+      showForm: false,
+      currentId:0,
+      currentName:'',
+      currentCity:'',
+      currentDate:''
     }
   }
 
@@ -31,13 +35,16 @@ class AllEvents extends Component{
          this.props.deleteEvent(event,eventId);
   }
 
-  handleUpdateEvent = (event) => {
-         let eventId = event.target.value;
-         this.setState({showForm:true});
-         console.log("my prop id",eventId);
-         console.log("my prop",this.props);
-         //this.props.updateEvent(event,eventId);
-        //  console.log("my prop",eventId);
+  handleUpdateEvent = (event,name,city,date) => {
+        this.setState({
+           showForm:true,
+           currentId:event.target.value,
+           currentName: name,
+           currentCity:city,
+           currentDate:date
+          });
+            //this.props.updateEvent(event,eventId);
+          console.log("This state",this.state);
           //this.props.history.push(`localhost:3000/events/${eventId}`)
   }
 
@@ -45,34 +52,21 @@ class AllEvents extends Component{
   {
    let event = this.props.events.first
     let railsApiEvents = this.props.events.map((event,index) =>
-      <li key={index}> - Name:{event.name} - City: {event.city} - Date: {event.date}
-      <button value={event.id} onClick={(e)=>this.handleUpdateEvent(e)}>Update {event.id}</button>
-      <button value={event.id} className="btn-danger" onClick={this.handleDeleteEvent}>Delete {event.id}</button>
+
+      <li key={index}>ID-{event.id} - Name:{event.name} - City: {event.city} - Date: {event.date}
+
+          <button value={event.id} onClick={(e)=>this.handleUpdateEvent(e,event.name,event.city,event.date)}>Update </button>
+
+          <button value={event.id} className="btn-danger" onClick={this.handleDeleteEvent}>Delete {event.id}</button>
 
       </li>);
+
     return(
+
     <React.Fragment>
        <br/> <button className="btn-primary" onClick={this.handleOnClick}>Display All</button>
-        {  this.state.showForm ?
-
-            <div className="jumbotron">
-                  <form onSubmit={this.handleOnSubmit}>
-                  <div className="form-inline">
-
-                        Name:<input type="text" className="form-control" name="name" placeholder="Name" value={this.state.name} onChange={(event)=>{this.handleOnChange(event)}}/>
-                        <br/>
-                        City:    <input type="text" className="form-control" name="city" placeholder="City" value={this.state.city} onChange={(event)=>{this.handleOnChange(event)}}/>
-                        <br/>
-                        Date:    <input type="text" className="form-control" name="date"  placeholder="mm/dd/yyyy" value={this.state.date} onChange={(event)=>{this.handleOnChange(event)}}/>
-                        <br/>
-                        <input type="submit"/>
-                        </div >
-                  </form>
-              </div>
-          : null
-        }
-       {railsApiEvents}
-       <UpdateForm props={event}/>
+        {  this.state.showForm ? <UpdateForm formValues={this.state}/> : null}
+          {railsApiEvents}
     </React.Fragment>
 )}
 }

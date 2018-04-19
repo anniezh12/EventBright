@@ -1,17 +1,17 @@
 
 import React from 'react';
 import { connect } from 'react-redux';
-import {addEvent} from '../actions/addevent.js'
+import updateEvent from '../actions/updateevent'
 
 
  class UpdateForm extends React.Component{
  constructor(props){
    super(props);
-   console.log("props",props)
    this.state={
-     name:'',
-     city:'',
-     date:'',
+     id:props.formValues.currentId,
+     name:props.formValues.currentName,
+     city:props.formValues.currentCity,
+     date:props.formValues.currentDate,
    }
  }
 
@@ -24,21 +24,15 @@ import {addEvent} from '../actions/addevent.js'
 
  handleOnSubmit = (event) => {
    event.preventDefault();
-   alert(event);
-  // this.props.updateEvent(this.state);
+   console.log("In handle submit",this.state);
+   this.props.updateEvent(this.state);
      }
-
-
-
   render(){
-
-    const eventLists = this.props.events.map((el,i)=><li key={i}>{el.name}</li>);
-
-    return(
-
+  return(
       <div>
-      {eventLists}
-      <h3>Using Redux</h3>
+
+      <h3>Updating...</h3>
+
       <div className="jumbotron">
             <form onSubmit={this.handleOnSubmit}>
             <div className="form-inline">
@@ -64,4 +58,4 @@ const mapStateToProps = (state) => {
    }
 
 
-export default connect(mapStateToProps)(UpdateForm);
+export default connect(mapStateToProps,{updateEvent})(UpdateForm);
