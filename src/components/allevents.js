@@ -43,9 +43,7 @@ class AllEvents extends Component{
            currentCity:city,
            currentDate:date
           });
-            //this.props.updateEvent(event,eventId);
-          console.log("This state",this.state);
-          //this.props.history.push(`localhost:3000/events/${eventId}`)
+          
   }
 
   render()

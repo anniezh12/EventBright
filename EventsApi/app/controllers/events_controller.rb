@@ -16,7 +16,7 @@ class EventsController < ApplicationController
          def update
            @event = Event.find(params[:id])
            @event.update(event_params)
-             render json:@event
+             render json: Event.all
          end
 
          def destroy

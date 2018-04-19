@@ -27,7 +27,9 @@ import updateEvent from '../actions/updateevent'
    console.log("In handle submit",this.state);
    this.props.updateEvent(this.state);
      }
+
   render(){
+
   return(
       <div>
 
