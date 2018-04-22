@@ -1,10 +1,6 @@
 body {
-  background-color: '#cccccc';
+  background-color: white   ;
 
-  background-repeat: no-repeat;
-  background-size: 100%;
-  background-position: right 120px;
-  margin: 0;
-  padding: 0;
+
   font-family: sans-serif;
 }

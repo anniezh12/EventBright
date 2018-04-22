@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #F39C12;
+  background-color: #7392A8    ;
   height: 100px;
   padding: 10px ;
   margin: 10px 10px;
@@ -34,18 +34,18 @@
   width:80%
 }
 .jumbotron{
-  width:80%
+  width:80%;
+  background-color:#EAECED
 }
-.Footer
+.footer
 {
-  width:'100px';
-  height: '15px';
-  clear:both;
-  margin-top: '300px';
-  background-color: #cccccc;
+  width:'100%';
+  height: '50px';
+  padding: 15px;
+  color:white;
+  background-color:#1C2D39     ;
 
 }
-
 
 
 @keyframes App-logo-spin {

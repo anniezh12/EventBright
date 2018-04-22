@@ -35,7 +35,7 @@ import updateEvent from '../actions/updateevent'
 
       <h3>Updating...</h3>
 
-      <div className="jumbotron">
+      <div className="container jumbotron">
             <form onSubmit={this.handleOnSubmit}>
             <div className="form-inline">
 

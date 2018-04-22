@@ -24,6 +24,7 @@ class App extends Component {
                   <Router>
                    <React.Fragment>
                    <NavBar/>
+                      <Route exact path="/" component={Home}/>
                       <Route exact path="/home" component={Home}/>
                       <Route exact path="/about" component={About}/>
                       <Route exact path="/event" component={Event}/>
@@ -37,8 +38,9 @@ class App extends Component {
         <div className="row">
             <div className="col-md-4">
 
-                <p>You can not only View, Add, Update and Delete Events to your local API using this App but can also see all of your scheduled events at Eventbrite!</p>
-            </div>
+                <p>You cannot only View, Add, Update and Delete Events to your local API using this App but you can also see all your scheduled events at Eventbrite!</p>
+
+              </div>
 <hr class="clearfix w-100 d-md-none"/>
     <div className="text-center py-3">
         <ul className="list-unstyled list-inline mb-0">
@@ -70,13 +72,15 @@ class App extends Component {
             </li>
           </ul>
        </div>
+
   </div>
 </div>
 </footer>
+ 
 <hr class="clearfix w-100 d-md-none"/>
-    <div className="footer-copyright py-3 text-center">
-        © 2018 Copyright:
-        <a href="#">Eventbrite.com </a>
+    <div className="footer">
+        © 2018 Copyright
+        <a href="http://www.eventbrite.com">  Eventberight.com  </a>
     </div>
 
          </React.Fragment>

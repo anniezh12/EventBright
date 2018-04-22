@@ -59,7 +59,7 @@ class AllEvents extends Component{
 
           <button value={event.id} className="btn-link" onClick={(e)=>this.handleUpdateEvent(e,event.name,event.city,event.date)}>Update </button>
 
-          <button value={event.id} className="btn-link" onClick={this.handleDeleteEvent}>Delete {event.id}</button>
+          <button value={event.id} className="btn-link" onClick={this.handleDeleteEvent}>Delete </button>
 
       </li>);
 
