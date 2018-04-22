@@ -11,6 +11,7 @@ import {addEvent} from '../actions/addevent.js'
      name:'',
      city:'',
      date:'',
+
    }
  }
 
@@ -35,6 +36,7 @@ import {addEvent} from '../actions/addevent.js'
     return(
 
       <div className="jumbotron container">
+      {this.props.error}
       {eventLists}
       <h3>Using Redux</h3>
       <div className="jumbotron container">
@@ -58,7 +60,8 @@ import {addEvent} from '../actions/addevent.js'
 }
 
 const mapStateToProps = (state) => {
-  return { events: state.events };
+  return { events: state.events,
+          error: state.error};
    }
 
 

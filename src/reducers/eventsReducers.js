@@ -1,11 +1,11 @@
 
-export default function eventsReducers(state= {events:[]},action){
+export default function eventsReducers(state= {events:[],error:"No Error"},action){
 
   switch(action.type)
   {
     case 'ADD_EVENT':
 
-      return {...state,events:[...state.events,action.events]}
+      return {...state,events:[...state.events,action.events],error:action.error}
 
     case 'DISPLAY_EVENTS':
 
@@ -19,6 +19,8 @@ export default function eventsReducers(state= {events:[]},action){
 
          return {...state,events: action.events }
 
+    case 'ERROR_MESSAGE':
+       return {...state,error:action.error}
     default:
 
       return state;
