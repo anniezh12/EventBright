@@ -3,7 +3,7 @@ import React from 'react';
 const ContactUs = () => {
 
   return (
-    <div className="jumbotron">
+    <div className="jumbotron container">
        Hi, you can contact us at
        <br/>
        1-800-388-4566

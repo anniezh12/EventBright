@@ -19,21 +19,18 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
                   <h1 className="App-title"><img src="pengu.gif" alt="Penguin Image" width='50px' height='50px'/>&nbsp;&nbsp;Event Be Right! </h1>
-
         </header>
 
                   <Router>
                    <React.Fragment>
-
                    <NavBar/>
-                   < nav className="navbar navbar-inverse">
                       <Route exact path="/home" component={Home}/>
                       <Route exact path="/about" component={About}/>
                       <Route exact path="/event" component={Event}/>
                       <Route exact path="/eventfromapi" component={EventsFromApi}/>
                       <Route exact path="/contactus" component={ContactUs}/>
                       <Route exact path="/redux" render={()=><EventDisplayedUsingRedux store={this.props.store}/>}/>
-                    </nav>
+                   <div className="Footer">Hello</div>
                    </React.Fragment>
                  </Router>
 

@@ -2,9 +2,9 @@ import React,{Component} from 'react';
 import EventForm from './eventform.js'
 const EventsLists = ({events}) =>(
 
-    <div>
+    <div >
     {events.map((event,index)=>{
-      return (<li key={index}> {event.name} - {event.city} - {event.date}</li>)
+      return (<li className="list-group-item" key={index}> {event.name} - {event.city} - {event.date}</li>)
       }
  )}
     </div>
@@ -30,7 +30,7 @@ export default class Event extends Component{
   render()  {
 
     return(
-     <div className="jumbotron">
+     <div className="jumbotron container">
 
         Number of Events Added :{this.state.events.length}
         <br/>

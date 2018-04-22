@@ -6,7 +6,6 @@ class EventsController < ApplicationController
        end
 
         def create
-
           @event= Event.new(event_params)
           if @event.save
             render json: @event

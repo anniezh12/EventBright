@@ -24,6 +24,29 @@
   font-size: large;
 }
 
+.Container{
+  width:'100px';
+  height: auto;
+  clear:both;
+  background-color: black;
+}
+.container {
+  width:80%
+}
+.jumbotron{
+  width:80%
+}
+.Footer
+{
+  width:'100px';
+  height: '15px';
+  clear:both;
+  margin-top: '300px';
+  background-color: #cccccc;
+
+}
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

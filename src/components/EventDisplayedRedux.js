@@ -34,10 +34,10 @@ import {addEvent} from '../actions/addevent.js'
 
     return(
 
-      <div>
+      <div className="jumbotron container">
       {eventLists}
       <h3>Using Redux</h3>
-      <div className="jumbotron">
+      <div className="jumbotron container">
             <form onSubmit={this.handleOnSubmit}>
             <div className="form-inline">
 

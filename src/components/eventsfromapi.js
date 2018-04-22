@@ -9,7 +9,7 @@ const CurrentUserEventsLists = ({events}) => (
   <div>
   {
     events.map((event,key) => {return (
-                        <li key={key}><b> {event.name.text}</b>
+                        <li className="list-group-item " key={key}><b> {event.name.text}</b>
                               <br/>{event.description.text}
                               <br/>Time: {event.start.local}
                               <br/> Time Zone :{event.start.timezone}
@@ -52,7 +52,7 @@ componentWillMount(){
   render()
   {
     return(
-      <div className="bg-warning text-white" >
+      <div className="jumbotron container" >
         <h4>All Events by {this.state.user}!</h4>
 
           <ol>

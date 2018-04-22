@@ -43,26 +43,31 @@ class AllEvents extends Component{
            currentCity:city,
            currentDate:date
           });
-          
+
   }
 
   render()
   {
-   let event = this.props.events.first
+   let event = this.props.events.first;
+
     let railsApiEvents = this.props.events.map((event,index) =>
 
-      <li key={index}>ID-{event.id} - Name:{event.name} - City: {event.city} - Date: {event.date}
+      <li className="list-group-item" key={index}>
+         <span className="badge">{event.id}</span>
+         {event.name} -  {event.city} -  {event.date}
 
-          <button value={event.id} onClick={(e)=>this.handleUpdateEvent(e,event.name,event.city,event.date)}>Update </button>
 
-          <button value={event.id} className="btn-danger" onClick={this.handleDeleteEvent}>Delete {event.id}</button>
+          <button value={event.id} className="btn-link" onClick={(e)=>this.handleUpdateEvent(e,event.name,event.city,event.date)}>Update </button>
+
+          <button value={event.id} className="btn-link" onClick={this.handleDeleteEvent}>Delete {event.id}</button>
 
       </li>);
+
 
     return(
 
     <React.Fragment>
-       <br/> <button className="btn-primary" onClick={this.handleOnClick}>Display All</button>
+       <br/> <button className="btn-link" onClick={this.handleOnClick}>Display All</button>
         {  this.state.showForm ? <UpdateForm formValues={this.state}/> : null}
           {railsApiEvents}
     </React.Fragment>
