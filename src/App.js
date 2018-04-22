@@ -30,15 +30,60 @@ class App extends Component {
                       <Route exact path="/eventfromapi" component={EventsFromApi}/>
                       <Route exact path="/contactus" component={ContactUs}/>
                       <Route exact path="/redux" render={()=><EventDisplayedUsingRedux store={this.props.store}/>}/>
-                   <div className="Footer">Hello</div>
-                   </React.Fragment>
+
+
+<footer className="page-footer font-small stylish-color-dark pt-4 mt-4">
+    <div className="container text-center text-md-left">
+        <div className="row">
+            <div className="col-md-4">
+
+                <p>You can not only View, Add, Update and Delete Events to your local API using this App but can also see all of your scheduled events at Eventbrite!</p>
+            </div>
+<hr class="clearfix w-100 d-md-none"/>
+    <div className="text-center py-3">
+        <ul className="list-unstyled list-inline mb-0">
+            <li className="list-inline-item">
+                <h5 className="mb-1">Register for free</h5>
+            </li>
+            <li className="list-inline-item">
+                <a href="#!" className="btn btn-danger btn-rounded">Sign up!</a>
+            </li>
+        </ul>
+    </div>
+    <hr class="clearfix w-100 d-md-none"/>
+    <div className="text-center">
+        <ul className="list-unstyled list-inline">
+            <li className="list-inline-item">
+                <a className="btn-floating btn-sm btn-fb mx-1">
+                    <i className="fa fa-facebook"><img src="facebook.png" width="30px"/></i>
+                </a>
+            </li>
+            <li className="list-inline-item">
+                <a className="btn-floating btn-sm btn-tw mx-1">
+                    <i className="fa fa-twitter"><img src="linkedin.png" width='33px' /> </i>
+                </a>
+            </li>
+            <li className="list-inline-item">
+                <a className="btn-floating btn-sm btn-gplus mx-1">
+                    <i className="fa fa-google-plus"><img src="twitter.png" width='30px' /> </i>
+                </a>
+            </li>
+          </ul>
+       </div>
+  </div>
+</div>
+</footer>
+<hr class="clearfix w-100 d-md-none"/>
+    <div className="footer-copyright py-3 text-center">
+        © 2018 Copyright:
+        <a href="#">Eventbrite.com </a>
+    </div>
+
+         </React.Fragment>
                  </Router>
+                 </div>
 
-
-
-
-      </div>
-    );
+  )
   }
 }
 
