@@ -1,5 +1,6 @@
 ## Event Be Right
- Is created using "create-react-app eventberight" and the rails Api is created using "rains new EventsApi". A user can see all of his events on eventbrite.com and can create events that will be stored in the local rails Api. Moreover these events can be modified and deleted.
+EventBright helps a user to see all of his events on eventbrite.com and to create events that will be stored in the local rails Api. Moreover these events can be modified and deleted.
+ This app is created using "create-react-app eventberight" and the rails Api is created using "rails new EventsApi". 
 
 ## Getting Started
   - Fork and clone the repo from        https://github.com/anniezh12/EventBright
