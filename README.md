@@ -8,6 +8,7 @@ EventBright helps a user to see all of his events on eventbrite.com and to creat
   - cd eventberight/EventApi
   - bundle install
   - rake db:migrate
+  - rake db:seed(to seed the data in data.js)
   - rails s(to start rails server)
   - Open a new tab and cd eventberight
   - npm start(browser will show the fully functional app)
