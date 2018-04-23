@@ -25,6 +25,12 @@ import {addEvent} from '../actions/addevent.js'
  handleOnSubmit = (event) => {
    event.preventDefault();
    this.props.addEvent(this.state);
+   this.setState({
+     name:'',
+     city:'',
+     date:'',
+
+   })
      }
 
 

@@ -12,7 +12,7 @@ console.log("resp",event.id);
        'Content-Type':"application/json"
      }
       })
-    .then(resp => console.log("pool=",resp))
+    .then(resp => resp.json())
     .then(events=> dispatch({
       type:'UPDATE_EVENT',
       events: events

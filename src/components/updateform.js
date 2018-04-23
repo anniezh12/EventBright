@@ -26,6 +26,12 @@ import updateEvent from '../actions/updateevent'
    event.preventDefault();
    console.log("In handle submit",this.state);
    this.props.updateEvent(this.state);
+   this.setState({
+     id:0,
+     name:"",
+     city:"",
+     date:""
+   })
      }
 
   render(){
