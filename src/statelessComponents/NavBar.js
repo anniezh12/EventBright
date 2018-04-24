@@ -12,19 +12,12 @@ width:'100%',
   textDecoration: 'none',
   color: 'black',
 }
- const circle = {
-   url: '../public/circle.png',
-   width: '60px',
-   height: '60px'
- }
+ 
 
         const NavBar = () =>{
           return(
            <div>
-
-
-              <NavLink to="/home" style={link}  >Home       
-              </NavLink>
+              <NavLink to="/home" style={link}  >Home </NavLink>
               <NavLink to="/about"  style={link}>Events  </NavLink>
               <NavLink to="/event"  style={link} >React </NavLink>
               <NavLink to="/eventfromapi"  style={link}>Eventbrite </NavLink>

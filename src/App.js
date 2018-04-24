@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-                  <h1 className="App-title"><img src="pengu.gif" alt="Penguin Image" width='50px' height='50px'/>&nbsp;&nbsp;Event Be Right! </h1>
+                  <h1 className="App-title"><img src="pengu.gif" alt={"Penguin Image"}  width='50px' height='50px'/>&nbsp;&nbsp;Event Be Right! </h1>
         </header>
 
                   <Router>
@@ -76,7 +76,7 @@ class App extends Component {
   </div>
 </div>
 </footer>
- 
+
 <hr class="clearfix w-100 d-md-none"/>
     <div className="footer">
         © 2018 Copyright

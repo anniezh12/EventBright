@@ -1,8 +1,7 @@
 import 'isomorphic-fetch';
   let URL = 'http://localhost:3000';
 // Adding Event
-export function addEvent(currentEvent) {
-console.log(currentEvent);
+export function addEvent(currentEvent, history) {
       return (dispatch) => {
         return fetch(`${URL}/events`,{
         method: 'post',
@@ -15,10 +14,13 @@ console.log(currentEvent);
         })
         .then(resp => { return resp.json()
             })
-        .then(events => dispatch({
+        .then(event => {
+          history.push('/home')
+          dispatch({
            type: 'ADD_EVENT',
-           events: events,
+           event: event,
           error: 'Successful creation of Event'})
+        }
          )
          .catch((errors) => dispatch({
               type:'ERROR_MESSAGE',
@@ -29,8 +31,11 @@ console.log(currentEvent);
 // display function
 export function displayEvents(){
   return (dispatch) =>{
-    return fetch('${URL}/events')
+    return fetch(`${URL}/events`)
     .then(resp => resp.json())
     .then(events => dispatch({type: 'DISPLAY_EVENTS',events: events}))
+    .catch(errors => dispatch({
+       type:'ERROR_MESSAGE',
+      error: "Unsuccessful Get Request"}))
     }
   }

@@ -2,6 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {addEvent} from '../actions/addevent.js'
+import { withRouter } from 'react-router-dom';
 
 
  class EventDisplayedUsingRedux extends React.Component{
@@ -11,7 +12,6 @@ import {addEvent} from '../actions/addevent.js'
      name:'',
      city:'',
      date:'',
-
    }
  }
 
@@ -23,8 +23,9 @@ import {addEvent} from '../actions/addevent.js'
   }
 
  handleOnSubmit = (event) => {
+   console.log(this.props)
    event.preventDefault();
-   this.props.addEvent(this.state);
+   this.props.addEvent(this.state, this.props.history);
    this.setState({
      name:'',
      city:'',
@@ -71,4 +72,4 @@ const mapStateToProps = (state) => {
    }
 
 
-export default connect(mapStateToProps,{addEvent})(EventDisplayedUsingRedux);
+export default withRouter(connect(mapStateToProps,{addEvent})(EventDisplayedUsingRedux));

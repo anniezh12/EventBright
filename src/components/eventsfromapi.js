@@ -7,7 +7,7 @@ const URL=`https://www.eventbriteapi.com/v3/users/me/?token=${MY_TOKEN}`;
 
 const CurrentUserEventsLists = ({events}) => (
   <div>
-  {
+   {events ?
     events.map((event,key) => {return (
                         <li className="list-group-item " key={key}><b> {event.name.text}</b>
                               <br/>{event.description.text}
@@ -16,9 +16,10 @@ const CurrentUserEventsLists = ({events}) => (
                               <br/> Price :{}
                               <br/>Tickets Left: {event.capacity}
                           </li>)
-                        })
+                        }) : "No Event by you or bad request to Api, Please check your token"}
 
-   }
+
+
   </div>
 )
 
@@ -45,7 +46,10 @@ componentWillMount(){
     //The following fetch will fetch from the Api and will get only current user info
     fetch(`https://www.eventbriteapi.com/v3/users/me/owned_events/?token=${MY_TOKEN}`)
     .then(response => response.json())
-    .then(resp => {this.setState({eventsByCurrentuser: resp.events})});
+    .then(resp => {this.setState({eventsByCurrentuser: resp.events})})
+    .catch(errors => {
+      console.log("you Got an error");
+    });
 
   }
 

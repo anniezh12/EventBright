@@ -6,10 +6,16 @@ export function displayEvents(dispatch) {
     .then(resp=>{
       return resp.json()
      })
-    .then(allEvents => dispatch({
+    .then(allEvents => {
+      
+      dispatch({
       type: 'DISPLAY_EVENTS',
-      events: allEvents }))
-      .catch(errors => {
-        console.log(errors)
-      })
+      events: allEvents,
+      error: 'Successful Request!' })
+    }
+    )
+      .catch((errors) => dispatch({
+        type:'ERROR_MESSAGE',
+        error:"Not Successful"
+      }));
 }}

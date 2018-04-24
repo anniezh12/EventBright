@@ -4,7 +4,11 @@ import {connect} from 'react-redux';
 import updateEvent from '../actions/updateevent';
 import deleteEvent from '../actions/deleteevent';
 import UpdateForm from '../components/updateform';
+import EventList from './new'
 
+const errorStyle = {
+  color: 'red'
+}
 
 class AllEvents extends Component{
 
@@ -17,7 +21,8 @@ class AllEvents extends Component{
       currentId:0,
       currentName:'',
       currentCity:'',
-      currentDate:''
+      currentDate:'',
+      likeCounter:0
     }
   }
 
@@ -25,7 +30,7 @@ class AllEvents extends Component{
     return this.state.events !== nextProps.events && nextProps.events
   }
 
-  handleOnClick = (e)=>{
+  handleOnClick = (e) => {
     this.props.displayEvents(this.state);
 
   }
@@ -46,27 +51,33 @@ class AllEvents extends Component{
 
   }
 
+  incrementCounter = (event) =>
+  {
+    event.preventDefault();
+    this.setState({
+      likeCounter: this.state.likeCounter+1
+    })
+  }
+
+
   render()
   {
-   let event = this.props.events.first;
+
 
     let railsApiEvents = this.props.events.map((event,index) =>
-
+      <div>
       <li className="list-group-item" key={index}>
-         <span className="badge">{event.id}</span>
-         {event.name} -  {event.city} -  {event.date}
+      <EventList  props={event}/>
+      </li>
+      </div>
 
-
-          <button value={event.id} className="btn-link" onClick={(e)=>this.handleUpdateEvent(e,event.name,event.city,event.date)}>Update </button>
-
-          <button value={event.id} className="btn-link" onClick={this.handleDeleteEvent}>Delete </button>
-
-      </li>);
+      );
 
 
     return(
 
     <React.Fragment>
+    <div style={errorStyle}>{this.props.error}</div>
        <br/> <button className="btn-link" onClick={this.handleOnClick}>Display All</button>
         {  this.state.showForm ? <UpdateForm formValues={this.state}/> : null}
           {railsApiEvents}
@@ -75,7 +86,8 @@ class AllEvents extends Component{
 }
 
 const mapStateToProps = (state) =>{
-  return {events: state.events}
+  return {events: state.events,
+  error: state.error}
  }
 
 export default connect(mapStateToProps,{displayEvents,updateEvent,deleteEvent})(AllEvents);
