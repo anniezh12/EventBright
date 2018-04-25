@@ -12,6 +12,7 @@ import { withRouter } from 'react-router-dom';
      name:'',
      city:'',
      date:'',
+     likes:0
    }
  }
 

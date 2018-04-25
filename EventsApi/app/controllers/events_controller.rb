@@ -23,6 +23,12 @@ class EventsController < ApplicationController
            if @event.destroy
             render json: Event.all
            end
+
+           def like
+             @event= Event.find(params[:id])
+             @event.likes += 1
+             render json:@event
+           end
          end
 
          private

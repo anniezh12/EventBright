@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import 'isomorphic-fetch';
 
 export default class EventList extends Component {
   constructor(props){
@@ -12,9 +13,7 @@ export default class EventList extends Component {
   incrementCounter = (event) =>
   {
     event.preventDefault();
-    this.setState({
-      likeCounter: this.state.likeCounter+1
-    })
+    this.props.incrementLike(this.state);
   }
   render(){
     const  event=this.props.props
