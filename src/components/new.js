@@ -19,7 +19,6 @@ export default class EventList extends Component {
   render(){
     const  event=this.props.props
 
-    console.log(this.props)
     return(
       <div>
          {event.name} -  {event.city} -  {event.date}
